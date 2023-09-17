@@ -35,6 +35,11 @@ BitString::BitString(const string& str) {
   }
 }
 
+BitString::~BitString() {
+  dataLeft.clear();
+  dataRight.clear();
+}
+
 void BitString::setLeftBits(const string& str) {
   if (str.length() != 32) {
     throw("Not 32 bit");
@@ -72,8 +77,7 @@ string BitString::getRightBits() {
 }
 
 string BitString::toString() {
-  string temp = "";
-  temp += dataLeft + dataRight;
+  string temp = dataLeft + dataRight;
   return temp;
 }
 
@@ -121,7 +125,7 @@ BitString BitString::operator!() {
   return toReturn;
 }
 
-void BitString::operator=(BitString other) {
+void BitString::operator=(const BitString other) {
   for (int i = 0; i < dataLeft.size(); i++) {
     dataLeft[i] = other.dataLeft[i];
     dataRight[i] = other.dataRight[i];

@@ -11,13 +11,14 @@ class BitString {
   BitString();
   BitString(const BitString&);
   BitString(const std::string&);
+  ~BitString();
 
   void setLeftBits(const std::string&);
   void setRightBits(const std::string&);
   std::string getLeftBits();
   std::string getRightBits();
 
-  void operator=(BitString other);
+  void operator=(const BitString other);
   BitString operator&(BitString& other);
   BitString operator|(BitString& other);
   BitString operator^(BitString& other);

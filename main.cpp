@@ -35,7 +35,7 @@ int main() {
   cout << setw(21) << "2-nd NOT: " << Res.toString() << endl << endl;
 
   Res = Test >> 3;
-  cout << setw(21) << "Shift left : " << Res.toString() << endl << endl;
+  cout << setw(21) << "Shift left: " << Res.toString() << endl << endl;
 
   Res = Test << 3;
   cout << setw(21) << "Shift right: " << Res.toString() << endl;
